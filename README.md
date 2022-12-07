@@ -13,7 +13,7 @@ The description of various hyper-parameters is given below.
 
 To find the best possible number of latent factors, the matrix factorization model was trained for different values of lf (10, 15, 20, 25). The graph for comparison of Test MSE and Number of Latent Factors is given below. 
 
-<img title="Test MSE VS Number of Latent Factors" alt="Alt text" src="TestMSEvsLF.png">
+<img title="Test MSE VS Number of Latent Factors" alt="Alt text" src="TestMSEvsLF.png" style="width:516px; height:352px">
 
 The results are summarized in the table below:
 
