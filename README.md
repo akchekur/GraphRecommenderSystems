@@ -1,4 +1,5 @@
 # Graph Recommender Systems
+
 The focus of the project is to implement and compare the traditional Matrix Factorization (numerical linear algebra) approach and IGMC (SOTA) approach across various metrics.
 
 *Matrix Factorization*
@@ -66,3 +67,29 @@ The comparison of various metrics over the test set on different max_nodes_per_h
 |--------------|-----------|------------|------------|------------| ------------|
 | MF |  0.9045 | 0.55 | 0.47 | 0.4902 | 5 sec | 
 | IGMC |  0.8371 | 0.7095 | 0.4446 | 0.5466 | 200 sec |
+
+*Libraries*
+
+The project uses pytorch-geometric and sparse. We were facing some issues in downloading the correct version during the project. Please use the below script if you are facing any issues with the libraries.
+
+```python
+import torch
+
+def format_pytorch_version(version):
+  return version.split('+')[0]
+
+TORCH_version = torch.__version__
+TORCH = format_pytorch_version(TORCH_version)
+
+def format_cuda_version(version):
+  return 'cu' + version.replace('.', '')
+
+CUDA_version = torch.version.cuda
+CUDA = format_cuda_version(CUDA_version)
+
+!pip install torch-scatter     -f https://pytorch-geometric.com/whl/torch-{TORCH}+{CUDA}.html
+!pip install torch-sparse      -f https://pytorch-geometric.com/whl/torch-{TORCH}+{CUDA}.html
+!pip install torch-cluster     -f https://pytorch-geometric.com/whl/torch-{TORCH}+{CUDA}.html
+!pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-{TORCH}+{CUDA}.html
+!pip install torch-geometric
+``` 
